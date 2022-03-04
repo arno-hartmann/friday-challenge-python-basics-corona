@@ -23,4 +23,12 @@ lockdown = (lockdown.calculateLockdown(response, lockdown_limiter))
 
 writeJSONFile((json.dumps({"cases": cases, "active": active, "trend": trend, "lockdown": lockdown})))
 
-print(checkBuckets.checkforBuckets())
+bucket_exists = (checkBuckets.checkforBuckets())
+
+if bucket_exists:
+    print("There is a Bucket already")
+else: 
+    createBucket.create_bucket("my-super-awesome-bucket-2398470qafsdkj")
+
+# print(checkBuckets.checkforBucketNames)
+

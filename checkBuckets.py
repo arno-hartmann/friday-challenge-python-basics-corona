@@ -4,7 +4,6 @@ import boto3
 def checkforBuckets():
     s3 = boto3.client('s3')
     response = s3.list_buckets()
-    print(response)
     # Output the bucket names
     print('Existing buckets:')
     for bucket in response['Buckets']:
@@ -14,3 +13,16 @@ def checkforBuckets():
         return False
     else:
         return True
+
+def checkforBucketNames():
+    s3 = boto3.client('s3')
+    response = s3.list_buckets()
+    # Output the bucket names
+    print('Existing buckets:')
+    for bucket in response['Buckets']:
+        print(f'  {bucket["Name"]}')
+
+    if not response['Buckets']:
+        return response['Buckets']['Name']
+    else:
+        return response['Buckets']['Name']
