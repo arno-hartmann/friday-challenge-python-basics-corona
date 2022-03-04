@@ -1,8 +1,9 @@
 import requests
 from writeJSON import writeJSONFile
 import trend
+import lockdown
 #Aufgabe: 
-
+lockdown_limiter = 1000
 
 url = requests.get("https://api.covid19api.com/live/country/barbados/status/confirmed")
 
@@ -18,3 +19,5 @@ active = response[-1]['Active'] - response[-8]['Active']
 print(cases, active)
 
 print(trend.calculateTrend(response))
+
+print(lockdown.calculateLockdown(response, lockdown_limiter))
