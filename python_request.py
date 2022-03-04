@@ -17,4 +17,4 @@ active = response[-1]['Active'] - response[-8]['Active']
 
 print(cases, active)
 
-trend.calculateTrend(response)
+print(trend.calculateTrend(response))
