@@ -25,9 +25,7 @@ writeJSONFile((json.dumps({"cases": cases, "active": active, "trend": trend, "lo
 
 bucket_exists = (checkBuckets.checkforBuckets())
 
-if bucket_exists:
-    print("There is a Bucket already")
-else: 
+if not bucket_exists: 
     createBucket.create_bucket("my-super-awesome-bucket-2398470qafsdkj")
 
 # print(checkBuckets.checkforBucketNames)
