@@ -2,6 +2,11 @@ import requests
 from writeJSON import writeJSONFile
 import trend
 import lockdown
+import active
+import cases
+
+
+
 #Aufgabe: 
 lockdown_limiter = 1000
 
@@ -10,14 +15,12 @@ url = requests.get("https://api.covid19api.com/live/country/barbados/status/conf
 #response is an array of dicts
 response = url.json()
 
-# x = (len(response))-1
-# y = response[-7]
-
-cases = response[-1]['Confirmed']
-active = response[-1]['Active'] - response[-8]['Active']
 
 print(cases, active)
 
 print(trend.calculateTrend(response))
 
 print(lockdown.calculateLockdown(response, lockdown_limiter))
+
+print(active.get_active(response))
+print(cases.get_cases(response))
