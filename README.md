@@ -5,7 +5,7 @@
 
 Exercise to learn the Basics about python and apis
 
-We will build da dashboard for corona data
+We will build a dashboard for corona data
 
 ### 1. Setup project
 1. create a new git repository 
