@@ -1,6 +1,6 @@
 import requests
 from writeJSON import writeJSONFile
-
+import trend
 #Aufgabe: 
 
 
@@ -16,3 +16,5 @@ cases = response[-1]['Confirmed']
 active = response[-1]['Active'] - response[-8]['Active']
 
 print(cases, active)
+
+trend.calculateTrend(response)
