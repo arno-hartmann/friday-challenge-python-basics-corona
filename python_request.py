@@ -5,7 +5,8 @@ import lockdown
 import active
 import cases
 import json
-
+import checkBuckets
+import createBucket
 
 
 lockdown_limiter = 1000
@@ -21,3 +22,5 @@ trend = (trend.calculateTrend(response))
 lockdown = (lockdown.calculateLockdown(response, lockdown_limiter))
 
 writeJSONFile((json.dumps({"cases": cases, "active": active, "trend": trend, "lockdown": lockdown})))
+
+print(checkBuckets.checkforBuckets())
